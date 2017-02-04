@@ -64,7 +64,7 @@ static const CGFloat kCapBetweenTwoPauseVerticalLines = 0.2 * EACH_COMPONENT_WID
 }
 
 #pragma mark -
-#pragma mark private
+#pragma mark Private
 - (UIBezierPath *)initializesPath {
     UIBezierPath *bezierPath = [UIBezierPath bezierPath];
     CGFloat widthOfTriangle = _widthOfTriangle;
@@ -156,6 +156,7 @@ static const CGFloat kCapBetweenTwoPauseVerticalLines = 0.2 * EACH_COMPONENT_WID
     [bezierPath moveToPoint:CGPointMake(playIconStartX + (EACH_COMPONENT_WIDTH - widthOfTriangle)/2, eachDistanceFromTopAndBottom)];
     [bezierPath addLineToPoint:CGPointMake(playIconStartX + (EACH_COMPONENT_WIDTH - widthOfTriangle)/2 + widthOfTriangle, EACH_COMPONENT_HEIGHT/2)];
     [bezierPath addLineToPoint:CGPointMake(playIconStartX + (EACH_COMPONENT_WIDTH - widthOfTriangle)/2, EACH_COMPONENT_HEIGHT - eachDistanceFromTopAndBottom)];
+    [bezierPath closePath];
     _playIconBackLayer.path = bezierPath.CGPath;
 }
 
