@@ -16,11 +16,10 @@ static char key;
 @dynamic animationProcessor;
 
 - (void)setAnimationProcessor:(AnimationProcessor *)animationProcessor {
-    AnimationProcessor *processor = [[AnimationProcessor alloc] init];
-    objc_setAssociatedObject(self, &key, processor, OBJC_ASSOCIATION_RETAIN);
+    objc_setAssociatedObject(self, &key, animationProcessor, OBJC_ASSOCIATION_RETAIN);
 }
 
-- (AnimationProcessor *)AnimationProcessor {
+- (AnimationProcessor *)animationProcessor {
     return objc_getAssociatedObject(self, &key);
 }
 
@@ -66,9 +65,12 @@ static char key;
 - (void)updatePercentage:(CADisplayLink *)displaylink {
     _percentage += _velocity;
     if (_percentage > 1) {
+        [_delegate updateLayerWithAnimationPercentage:1];
         _percentage = 0;
     }
-    [_delegate updateLayerWithAnimationPercentage:_percentage];
+    else {
+        [_delegate updateLayerWithAnimationPercentage:_percentage];
+    }
 }
 
 @end

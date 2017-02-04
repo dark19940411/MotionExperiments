@@ -11,6 +11,4 @@
 
 @interface Spinner : UIView <AnimationProcessorDelegate>
 
-@property (nonatomic, strong)AnimationProcessor *animationProcessor;
-
 @end

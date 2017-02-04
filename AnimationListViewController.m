@@ -8,6 +8,7 @@
 
 #import "AnimationListViewController.h"
 #import "SpinnerPresentationViewController.h"
+#import "PlayPauseIconPresentationViewController.h"
 
 NSArray<NSString *> *kAnimationsList = nil;
 NSArray *kAnmationsClasses = nil;
@@ -25,8 +26,8 @@ NSArray *kAnmationsClasses = nil;
     _animationsTableview.dataSource = self;
     _animationsTableview.delegate = self;
     
-    kAnimationsList = @[@"Spinner"];
-    kAnmationsClasses = @[[SpinnerPresentationViewController class]];
+    kAnimationsList = @[@"Spinner",@"Play/Pause Icon Transition"];
+    kAnmationsClasses = @[[SpinnerPresentationViewController class], [PlayPauseIconPresentationViewController class]];
 }
 
 #pragma mark -
@@ -50,6 +51,7 @@ NSArray *kAnmationsClasses = nil;
 #pragma mark -
 #pragma mark UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     Class specificClass = kAnmationsClasses[indexPath.row];
     UIViewController *presentingViewController = [[specificClass alloc] init];
     [self.navigationController pushViewController:presentingViewController animated:YES];

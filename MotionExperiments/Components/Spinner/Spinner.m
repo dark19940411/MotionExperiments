@@ -18,6 +18,8 @@
 
 @implementation Spinner
 
+#pragma mark -
+#pragma mark UIKit Inheritance
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
@@ -33,6 +35,8 @@
     return self;
 }
 
+#pragma mark -
+#pragma mark AnimationProcessorDelegate
 - (void)updateLayerWithAnimationPercentage:(CGFloat)percentage{
     CGFloat realPercentInCircle;
     CGFloat angle;
@@ -63,11 +67,11 @@
         realPercentInCircle = (percentage - 2.0/3.0)/(1.0/3.0);
         angle = 2 * M_PI * realPercentInCircle;
         if (angle >= 2 * M_PI / 3) {
-            if (percentage + 0.007 > 1) {
+            if (percentage == 1) {
                 _spinnerBackLayer.lineWidth = 0;
-                [_animationProcessor stopAnimating];
+                [self.animationProcessor stopAnimating];
                 dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                    [_animationProcessor startAnimating];
+                    [self.animationProcessor startAnimating];
                 });
             }
             else {
@@ -79,12 +83,19 @@
             [bezierPath addArcWithCenter:circleCenter radius:_radius startAngle:3 * M_PI_2 + angle - M_PI/12 endAngle:3 * M_PI_2 + angle clockwise:YES];
         }
         else {
-            [self addASpinCycleToPath:bezierPath currentAngle:angle realPercentInCircle:realPercentInCircle];
+            if (angle <= 4 * M_PI / 3) {
+                [bezierPath addArcWithCenter:circleCenter radius:_radius startAngle:angle/2 + 3 * M_PI_2 endAngle:angle + 3 * M_PI_2 clockwise:YES];
+            }else {
+                CGFloat intersectionAngle = (1-((realPercentInCircle - (2.f/3.f))/(1.f/3.f))) * (2 * M_PI/3);
+                [bezierPath addArcWithCenter:circleCenter radius:_radius startAngle:3 * M_PI_2 + angle - intersectionAngle endAngle:3 * M_PI_2 + angle clockwise:YES];
+            }
         }
     }
     _spinnerBackLayer.path = bezierPath.CGPath;
 }
 
+#pragma mark -
+#pragma mark private
 //因为每圈里圆弧的旋转包括弧长伸缩那些都一样，所以写成一个方法
 - (void)addASpinCycleToPath:(UIBezierPath *)bezierPath currentAngle:(CGFloat)angle realPercentInCircle:(CGFloat)realPercentInCircle{
     CGPoint circleCenter = CGPointMake(self.frame.size.width/2, self.frame.size.height/2);

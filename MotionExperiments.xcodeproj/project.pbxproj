@@ -11,6 +11,8 @@
 		E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */; };
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
 		E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */; };
+		E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E409231E404E4E005E438B /* PlayPauseIcon.m */; };
+		E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E409261E407AB5005E438B /* PlayPauseIconPresentationViewController.m */; };
 		E4F7EF341E3F191A001AEDB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F7EF331E3F191A001AEDB9 /* main.m */; };
 		E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F7EF361E3F191A001AEDB9 /* AppDelegate.m */; };
 		E4F7EF3D1E3F191A001AEDB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E4F7EF3B1E3F191A001AEDB9 /* Main.storyboard */; };
@@ -46,6 +48,10 @@
 		E430870C1E3F1CB900565C6A /* AnimationProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationProcessor.m; sourceTree = "<group>"; };
 		E4DA3DF91E3F263400E4253F /* AnimationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
+		E4E409221E404E4E005E438B /* PlayPauseIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPauseIcon.h; sourceTree = "<group>"; };
+		E4E409231E404E4E005E438B /* PlayPauseIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPauseIcon.m; sourceTree = "<group>"; };
+		E4E409251E407AB5005E438B /* PlayPauseIconPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPauseIconPresentationViewController.h; sourceTree = "<group>"; };
+		E4E409261E407AB5005E438B /* PlayPauseIconPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPauseIconPresentationViewController.m; sourceTree = "<group>"; };
 		E4F7EF2F1E3F191A001AEDB9 /* MotionExperiments.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MotionExperiments.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4F7EF331E3F191A001AEDB9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E4F7EF351E3F191A001AEDB9 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -90,6 +96,7 @@
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E4E409211E404D60005E438B /* Play:Pause icon transition */,
 				E43087031E3F1A1700565C6A /* Spinner */,
 			);
 			path = Components;
@@ -113,6 +120,17 @@
 				E430870C1E3F1CB900565C6A /* AnimationProcessor.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4E409211E404D60005E438B /* Play:Pause icon transition */ = {
+			isa = PBXGroup;
+			children = (
+				E4E409221E404E4E005E438B /* PlayPauseIcon.h */,
+				E4E409231E404E4E005E438B /* PlayPauseIcon.m */,
+				E4E409251E407AB5005E438B /* PlayPauseIconPresentationViewController.h */,
+				E4E409261E407AB5005E438B /* PlayPauseIconPresentationViewController.m */,
+			);
+			path = "Play:Pause icon transition";
 			sourceTree = "<group>";
 		};
 		E4F7EF261E3F191A001AEDB9 = {
@@ -319,8 +337,10 @@
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,
+				E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */,
 				E43087061E3F1A1700565C6A /* Spinner.m in Sources */,
 				E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */,
+				E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
