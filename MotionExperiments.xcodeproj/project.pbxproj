@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8C1E45DA0A00CA3F61 /* Tap.m */; };
+		E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */; };
 		E43087061E3F1A1700565C6A /* Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087051E3F1A1700565C6A /* Spinner.m */; };
 		E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */; };
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
@@ -40,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E41D6C8B1E45DA0A00CA3F61 /* Tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tap.h; sourceTree = "<group>"; };
+		E41D6C8C1E45DA0A00CA3F61 /* Tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tap.m; sourceTree = "<group>"; };
+		E41D6C8E1E45DA6E00CA3F61 /* TapPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapPresentationViewController.h; sourceTree = "<group>"; };
+		E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapPresentationViewController.m; sourceTree = "<group>"; };
 		E43087041E3F1A1700565C6A /* Spinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spinner.h; sourceTree = "<group>"; };
 		E43087051E3F1A1700565C6A /* Spinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spinner.m; sourceTree = "<group>"; };
 		E43087071E3F1A3200565C6A /* SpinnerPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerPresentationViewController.h; sourceTree = "<group>"; };
@@ -93,9 +99,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E41D6C8A1E45D9FA00CA3F61 /* Tap */ = {
+			isa = PBXGroup;
+			children = (
+				E41D6C8B1E45DA0A00CA3F61 /* Tap.h */,
+				E41D6C8C1E45DA0A00CA3F61 /* Tap.m */,
+				E41D6C8E1E45DA6E00CA3F61 /* TapPresentationViewController.h */,
+				E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */,
+			);
+			path = Tap;
+			sourceTree = "<group>";
+		};
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E41D6C8A1E45D9FA00CA3F61 /* Tap */,
 				E4E409211E404D60005E438B /* Play:Pause icon transition */,
 				E43087031E3F1A1700565C6A /* Spinner */,
 			);
@@ -333,7 +351,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */,
 				E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */,
+				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,
