@@ -99,6 +99,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E41424D01E77EAE3005B81EA /* Newton Cradle */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Newton Cradle";
+			sourceTree = "<group>";
+		};
 		E41D6C8A1E45D9FA00CA3F61 /* Tap */ = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +120,7 @@
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E41424D01E77EAE3005B81EA /* Newton Cradle */,
 				E41D6C8A1E45D9FA00CA3F61 /* Tap */,
 				E4E409211E404D60005E438B /* Play:Pause icon transition */,
 				E43087031E3F1A1700565C6A /* Spinner */,

@@ -128,7 +128,7 @@
 }
 
 - (void)changeLayersOpacity:(CGFloat)opacity {
-    [CATransaction begin];
+    [CATransaction begin];              //为了取消CALayer的隐式动画
     [CATransaction setDisableActions:YES];
     _internalLayer.opacity = opacity;
     _mediumLayer.opacity = opacity;
