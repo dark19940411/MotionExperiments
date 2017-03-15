@@ -16,6 +16,9 @@
 		E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */; };
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
 		E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */; };
+		E4DA90F61E793B33005DA2E4 /* SeachIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F51E793B33005DA2E4 /* SeachIcon.m */; };
+		E4DA90F91E793B73005DA2E4 /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */; };
+		E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */; };
 		E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E409231E404E4E005E438B /* PlayPauseIcon.m */; };
 		E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4E409261E407AB5005E438B /* PlayPauseIconPresentationViewController.m */; };
 		E4F7EF341E3F191A001AEDB9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E4F7EF331E3F191A001AEDB9 /* main.m */; };
@@ -64,6 +67,12 @@
 		E430870C1E3F1CB900565C6A /* AnimationProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationProcessor.m; sourceTree = "<group>"; };
 		E4DA3DF91E3F263400E4253F /* AnimationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
+		E4DA90F41E793B33005DA2E4 /* SeachIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachIcon.h; sourceTree = "<group>"; };
+		E4DA90F51E793B33005DA2E4 /* SeachIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeachIcon.m; sourceTree = "<group>"; };
+		E4DA90F71E793B73005DA2E4 /* PublicAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationView.h; sourceTree = "<group>"; };
+		E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationView.m; sourceTree = "<group>"; };
+		E4DA90FA1E793BBD005DA2E4 /* SearchIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchIconViewController.h; sourceTree = "<group>"; };
+		E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchIconViewController.m; sourceTree = "<group>"; };
 		E4E409221E404E4E005E438B /* PlayPauseIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPauseIcon.h; sourceTree = "<group>"; };
 		E4E409231E404E4E005E438B /* PlayPauseIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayPauseIcon.m; sourceTree = "<group>"; };
 		E4E409251E407AB5005E438B /* PlayPauseIconPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayPauseIconPresentationViewController.h; sourceTree = "<group>"; };
@@ -115,6 +124,8 @@
 				E403EF1C1E782FBB0005586F /* AnimationDelegate.h */,
 				E403EF191E782FAB0005586F /* PublicAnimationLayer.h */,
 				E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */,
+				E4DA90F71E793B73005DA2E4 /* PublicAnimationView.h */,
+				E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */,
 			);
 			path = "Public Class";
 			sourceTree = "<group>";
@@ -145,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E403EF181E782F6D0005586F /* Public Class */,
+				E4DA90F31E793B15005DA2E4 /* Search Icon */,
 				E41424D01E77EAE3005B81EA /* Newton Cradle */,
 				E41D6C8A1E45D9FA00CA3F61 /* Tap */,
 				E4E409211E404D60005E438B /* Play:Pause icon transition */,
@@ -171,6 +183,17 @@
 				E430870C1E3F1CB900565C6A /* AnimationProcessor.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4DA90F31E793B15005DA2E4 /* Search Icon */ = {
+			isa = PBXGroup;
+			children = (
+				E4DA90F41E793B33005DA2E4 /* SeachIcon.h */,
+				E4DA90F51E793B33005DA2E4 /* SeachIcon.m */,
+				E4DA90FA1E793BBD005DA2E4 /* SearchIconViewController.h */,
+				E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */,
+			);
+			path = "Search Icon";
 			sourceTree = "<group>";
 		};
 		E4E409211E404D60005E438B /* Play:Pause icon transition */ = {
@@ -384,8 +407,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4DA90F91E793B73005DA2E4 /* PublicAnimationView.m in Sources */,
 				E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */,
 				E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */,
+				E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */,
 				E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */,
 				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
@@ -397,6 +422,7 @@
 				E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */,
 				E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */,
 				E41424D31E77EE6A005B81EA /* NewtonCradle.m in Sources */,
+				E4DA90F61E793B33005DA2E4 /* SeachIcon.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
