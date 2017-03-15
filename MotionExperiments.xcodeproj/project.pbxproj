@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E403EF1B1E782FAB0005586F /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */; };
+		E41424D31E77EE6A005B81EA /* NewtonCradle.m in Sources */ = {isa = PBXBuildFile; fileRef = E41424D21E77EE6A005B81EA /* NewtonCradle.m */; };
+		E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41424D51E77EF51005B81EA /* NewtonCradleViewController.m */; };
 		E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8C1E45DA0A00CA3F61 /* Tap.m */; };
 		E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */; };
 		E43087061E3F1A1700565C6A /* Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087051E3F1A1700565C6A /* Spinner.m */; };
@@ -42,6 +45,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		E403EF191E782FAB0005586F /* PublicAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationLayer.h; sourceTree = "<group>"; };
+		E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationLayer.m; sourceTree = "<group>"; };
+		E403EF1C1E782FBB0005586F /* AnimationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationDelegate.h; sourceTree = "<group>"; };
+		E41424D11E77EE6A005B81EA /* NewtonCradle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewtonCradle.h; sourceTree = "<group>"; };
+		E41424D21E77EE6A005B81EA /* NewtonCradle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewtonCradle.m; sourceTree = "<group>"; };
+		E41424D41E77EF51005B81EA /* NewtonCradleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewtonCradleViewController.h; sourceTree = "<group>"; };
+		E41424D51E77EF51005B81EA /* NewtonCradleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewtonCradleViewController.m; sourceTree = "<group>"; };
 		E41D6C8B1E45DA0A00CA3F61 /* Tap.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tap.h; sourceTree = "<group>"; };
 		E41D6C8C1E45DA0A00CA3F61 /* Tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tap.m; sourceTree = "<group>"; };
 		E41D6C8E1E45DA6E00CA3F61 /* TapPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapPresentationViewController.h; sourceTree = "<group>"; };
@@ -99,9 +109,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		E403EF181E782F6D0005586F /* Public Class */ = {
+			isa = PBXGroup;
+			children = (
+				E403EF1C1E782FBB0005586F /* AnimationDelegate.h */,
+				E403EF191E782FAB0005586F /* PublicAnimationLayer.h */,
+				E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */,
+			);
+			path = "Public Class";
+			sourceTree = "<group>";
+		};
 		E41424D01E77EAE3005B81EA /* Newton Cradle */ = {
 			isa = PBXGroup;
 			children = (
+				E41424D11E77EE6A005B81EA /* NewtonCradle.h */,
+				E41424D21E77EE6A005B81EA /* NewtonCradle.m */,
+				E41424D41E77EF51005B81EA /* NewtonCradleViewController.h */,
+				E41424D51E77EF51005B81EA /* NewtonCradleViewController.m */,
 			);
 			path = "Newton Cradle";
 			sourceTree = "<group>";
@@ -120,6 +144,7 @@
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				E403EF181E782F6D0005586F /* Public Class */,
 				E41424D01E77EAE3005B81EA /* Newton Cradle */,
 				E41D6C8A1E45D9FA00CA3F61 /* Tap */,
 				E4E409211E404D60005E438B /* Play:Pause icon transition */,
@@ -359,16 +384,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */,
 				E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */,
 				E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */,
 				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
+				E403EF1B1E782FAB0005586F /* PublicAnimationLayer.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,
 				E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */,
 				E43087061E3F1A1700565C6A /* Spinner.m in Sources */,
 				E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */,
 				E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */,
+				E41424D31E77EE6A005B81EA /* NewtonCradle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
