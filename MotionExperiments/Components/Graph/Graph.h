@@ -8,6 +8,10 @@
 
 #import "PublicAnimationLayer.h"
 
+#define GRAPH_BG_HEIGHT 300.0
+
 @interface Graph : PublicAnimationLayer
+
+- (void)setPointData:(NSArray *)pointData;
 
 @end
