@@ -9,7 +9,9 @@
 #import "SearchIconViewController.h"
 #import "SeachIcon.h"
 
-@interface SearchIconViewController ()
+@interface SearchIconViewController (){
+    SeachIcon *_searchIcon;
+}
 
 @end
 
