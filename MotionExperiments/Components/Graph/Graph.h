@@ -8,7 +8,7 @@
 
 #import "PublicAnimationLayer.h"
 
-#define GRAPH_BG_HEIGHT 300.0
+#define GRAPH_BG_HEIGHT 250.0
 
 @interface Graph : PublicAnimationLayer
 

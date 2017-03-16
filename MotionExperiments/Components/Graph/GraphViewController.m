@@ -19,6 +19,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
     _graph = [Graph layer];
     CGSize scrSize = [UIScreen mainScreen].bounds.size;
     _graph.frame = CGRectMake(0, (scrSize.height - GRAPH_BG_HEIGHT)/2, scrSize.width, GRAPH_BG_HEIGHT);
