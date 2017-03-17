@@ -15,3 +15,20 @@
 }
 
 @end
+
+@implementation PublicAnimationShapeLayer
+
+- (void)startAnimation {
+    [self doesNotRecognizeSelector:_cmd];
+}
+
++ (instancetype)layer {
+    PublicAnimationShapeLayer *layer = [super layer];
+    if (layer) {
+        layer.lineCap = kCALineCapRound;
+        layer.lineJoin = kCALineJoinRound;
+    }
+    return layer;
+}
+
+@end

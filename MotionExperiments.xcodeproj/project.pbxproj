@@ -12,6 +12,9 @@
 		E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41424D51E77EF51005B81EA /* NewtonCradleViewController.m */; };
 		E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8C1E45DA0A00CA3F61 /* Tap.m */; };
 		E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */; };
+		E42E262D1E7B831A0058ABEB /* AnimatableDonutsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E262C1E7B831A0058ABEB /* AnimatableDonutsLayer.m */; };
+		E42E26321E7B96CB0058ABEB /* UIBezierPath+CommonPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E26311E7B96CB0058ABEB /* UIBezierPath+CommonPath.m */; };
+		E42E26341E7BCCBA0058ABEB /* CAAnimation+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */; };
 		E43087061E3F1A1700565C6A /* Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087051E3F1A1700565C6A /* Spinner.m */; };
 		E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */; };
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
@@ -61,6 +64,13 @@
 		E41D6C8C1E45DA0A00CA3F61 /* Tap.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tap.m; sourceTree = "<group>"; };
 		E41D6C8E1E45DA6E00CA3F61 /* TapPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TapPresentationViewController.h; sourceTree = "<group>"; };
 		E41D6C8F1E45DA6E00CA3F61 /* TapPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TapPresentationViewController.m; sourceTree = "<group>"; };
+		E42E262B1E7B831A0058ABEB /* AnimatableDonutsLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatableDonutsLayer.h; sourceTree = "<group>"; };
+		E42E262C1E7B831A0058ABEB /* AnimatableDonutsLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatableDonutsLayer.m; sourceTree = "<group>"; };
+		E42E26301E7B96CB0058ABEB /* UIBezierPath+CommonPath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIBezierPath+CommonPath.h"; sourceTree = "<group>"; };
+		E42E26311E7B96CB0058ABEB /* UIBezierPath+CommonPath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIBezierPath+CommonPath.m"; sourceTree = "<group>"; };
+		E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CAAnimation+Tools.m"; sourceTree = "<group>"; };
+		E42E26351E7BCCD50058ABEB /* CAAnimation+Tools.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CAAnimation+Tools.h"; sourceTree = "<group>"; };
+		E42E26361E7BCE600058ABEB /* Extensions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Extensions.h; sourceTree = "<group>"; };
 		E43087041E3F1A1700565C6A /* Spinner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spinner.h; sourceTree = "<group>"; };
 		E43087051E3F1A1700565C6A /* Spinner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Spinner.m; sourceTree = "<group>"; };
 		E43087071E3F1A3200565C6A /* SpinnerPresentationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpinnerPresentationViewController.h; sourceTree = "<group>"; };
@@ -158,6 +168,27 @@
 			path = Tap;
 			sourceTree = "<group>";
 		};
+		E42E262A1E7B821C0058ABEB /* AnimatableLayer */ = {
+			isa = PBXGroup;
+			children = (
+				E42E262B1E7B831A0058ABEB /* AnimatableDonutsLayer.h */,
+				E42E262C1E7B831A0058ABEB /* AnimatableDonutsLayer.m */,
+			);
+			path = AnimatableLayer;
+			sourceTree = "<group>";
+		};
+		E42E262F1E7B96BB0058ABEB /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E42E26361E7BCE600058ABEB /* Extensions.h */,
+				E42E26301E7B96CB0058ABEB /* UIBezierPath+CommonPath.h */,
+				E42E26311E7B96CB0058ABEB /* UIBezierPath+CommonPath.m */,
+				E42E26351E7BCCD50058ABEB /* CAAnimation+Tools.h */,
+				E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -206,6 +237,7 @@
 		E4DA90FD1E7A28D4005DA2E4 /* Graph */ = {
 			isa = PBXGroup;
 			children = (
+				E42E262A1E7B821C0058ABEB /* AnimatableLayer */,
 				E4DA90FE1E7A28F6005DA2E4 /* Graph.h */,
 				E4DA90FF1E7A28F6005DA2E4 /* Graph.m */,
 				E4DA91011E7A2931005DA2E4 /* GraphViewController.h */,
@@ -250,6 +282,7 @@
 		E4F7EF311E3F191A001AEDB9 /* MotionExperiments */ = {
 			isa = PBXGroup;
 			children = (
+				E42E262F1E7B96BB0058ABEB /* Extensions */,
 				E430870A1E3F1A7300565C6A /* Utils */,
 				E43087021E3F1A1700565C6A /* Components */,
 				E4F7EF351E3F191A001AEDB9 /* AppDelegate.h */,
@@ -432,11 +465,14 @@
 				E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */,
 				E4DA91031E7A2931005DA2E4 /* GraphViewController.m in Sources */,
 				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
+				E42E262D1E7B831A0058ABEB /* AnimatableDonutsLayer.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
 				E403EF1B1E782FAB0005586F /* PublicAnimationLayer.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,
 				E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */,
+				E42E26321E7B96CB0058ABEB /* UIBezierPath+CommonPath.m in Sources */,
+				E42E26341E7BCCBA0058ABEB /* CAAnimation+Tools.m in Sources */,
 				E43087061E3F1A1700565C6A /* Spinner.m in Sources */,
 				E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */,
 				E4E409241E404E4E005E438B /* PlayPauseIcon.m in Sources */,

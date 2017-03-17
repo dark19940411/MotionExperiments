@@ -12,6 +12,7 @@
 #import "TapPresentationViewController.h"
 #import "NewtonCradleViewController.h"
 #import "GraphViewController.h"
+#import "SearchIconViewController.h"
 
 NSArray<NSString *> *kAnimationsList = nil;
 NSArray *kAnmationsClasses = nil;
@@ -29,12 +30,13 @@ NSArray *kAnmationsClasses = nil;
     _animationsTableview.dataSource = self;
     _animationsTableview.delegate = self;
     
-    kAnimationsList = @[@"Spinner",@"Play/Pause Icon Transition",@"Tap",@"Newton Cradle",@"Graph"];
+    kAnimationsList = @[@"Spinner",@"Play/Pause Icon Transition",@"Tap",@"Newton Cradle",@"Graph",@"Search Icon"];
     kAnmationsClasses = @[[SpinnerPresentationViewController class],
                           [PlayPauseIconPresentationViewController class],
                           [TapPresentationViewController class],
                           [NewtonCradleViewController class],
-                          [GraphViewController class]];
+                          [GraphViewController class],
+                          [SearchIconViewController class]];
 }
 
 #pragma mark -

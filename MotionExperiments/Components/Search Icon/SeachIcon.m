@@ -13,8 +13,8 @@
 
 @implementation SeachIcon {
     BOOL _searching;
-    CALayer *_circleLayer;          //搜索的圆圈的layer
-    CALayer *_handleLayer;          //放大镜的柄layer
+    CAShapeLayer *_circleLayer;          //搜索的圆圈的layer
+    CAShapeLayer *_handleLayer;          //放大镜的柄layer
 }
 
 #pragma mark -
@@ -23,10 +23,32 @@
     self = [super initWithFrame:frame];
     if (self) {
         _searching = NO;
+        _circleLayer = [CAShapeLayer layer];
+        _circleLayer.frame = self.bounds;
+//        _circleLayer.lineWidth = 5.0;
+//        _circleLayer.strokeColor = [UIColor blackColor].CGColor;
+//        _circleLayer.fillColor = [UIColor blackColor].CGColor;
+//        _circleLayer.lineCap = kCALineCapRound;
+//        _circleLayer.lineJoin = kCALineJoinRound;
+//        _circleLayer.path = [self __createCirclePathWithRadius:SI_BG_WIDTH/2 - 5].CGPath;
+        _circleLayer.backgroundColor = [UIColor blackColor].CGColor;
+        
+        CAShapeLayer *maskLayer = [CAShapeLayer layer];
+        maskLayer.lineWidth = 5.0;
+        maskLayer.lineJoin = kCALineJoinRound;
+        maskLayer.lineCap = kCALineCapRound;
+        maskLayer.path = [self __createCirclePathWithRadius:SI_BG_WIDTH/2 -25].CGPath;
+        _circleLayer.mask = maskLayer;
+        
+        [self.layer addSublayer:_circleLayer];
     }
     return self;
 }
 
-
+- (UIBezierPath *)__createCirclePathWithRadius:(CGFloat)radius {
+    UIBezierPath *bezierPath = [UIBezierPath bezierPath];
+    [bezierPath addArcWithCenter:CGPointMake(SI_BG_WIDTH/2, SI_BG_HEIGHT/2) radius:radius startAngle:0 endAngle:2 * M_PI clockwise:YES];
+    return bezierPath;
+}
 
 @end

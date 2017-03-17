@@ -32,10 +32,6 @@
 
 @end
 
-@interface NewtonCradle ()<CAAnimationDelegate>
-
-@end
-
 @implementation NewtonCradle {
     NSMutableArray<CAShapeLayer *> *_cradles;
     CAAnimationGroup *_firstAnimation;
