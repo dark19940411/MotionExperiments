@@ -7,6 +7,7 @@
 //
 
 #import "Graph.h"
+#import "AnimatableDonutsLayer.h"
 
 #define GRAPH_HEIGHT (GRAPH_BG_HEIGHT/2.0)
 #define CONTENT_OFFSET 20.0
@@ -104,7 +105,12 @@
 #pragma mark -
 #pragma mark AnimationDelegate
 - (void)startAnimation {
-    
+    for (NSValue *pointV in _processedPointData) {
+        CGPoint point = [pointV CGPointValue];
+        AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET];
+        [self addSublayer:donutsLayer];
+        [donutsLayer startAnimation];
+    }
 }
 
 @end

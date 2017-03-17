@@ -27,8 +27,9 @@
                                        inRadius:(CGFloat)inRadius
                                 andRadiusOffset:(CGFloat)radiusOffset
 {
-    AnimatableDonutsLayer *layer = [AnimatableDonutsLayer layer];
-    layer->_centerPoint = centerPoint;
+    CGFloat edge = (excRadius + radiusOffset) * 2;
+    AnimatableDonutsLayer *layer = [AnimatableDonutsLayer layerWithCenterPoint:centerPoint size:CGSizeMake(edge, edge)];
+    layer->_centerPoint = CGPointMake(edge/2, edge/2);
     layer->_excRadius = excRadius;
     layer->_inRadius = inRadius;
     layer->_radiusOffset = radiusOffset;
@@ -46,7 +47,7 @@
 #pragma mark AnimationDelegate
 - (void)startAnimation {
     CGFloat extendingTimes = (_excRadius - _inRadius + _radiusOffset)/START_RADIUS;
-    CATransform3D extendingTransf = CATransform3DMakeScale(extendingTimes, extendingTimes, 0);
+    CATransform3D extendingTransf = CATransform3DMakeScale(extendingTimes, extendingTimes, 1);
     
     NSValue *fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
     NSValue *toValue = [NSValue valueWithCATransform3D:extendingTransf];
@@ -66,5 +67,9 @@
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
     
 }
+
+#pragma mark -
+#pragma mark Configure Animations
+
 
 @end
