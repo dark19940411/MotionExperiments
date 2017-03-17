@@ -65,11 +65,18 @@
 #pragma mark -
 #pragma mark CAAnimationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    
+    [self __configureInsideLayerAndAnimation];
+    [self __configureTheRestAnimationOfSelf];
 }
 
 #pragma mark -
 #pragma mark Configure Animations
+- (void)__configureInsideLayerAndAnimation {
+    
+}
 
+- (void)__configureTheRestAnimationOfSelf {
+    
+}
 
 @end
