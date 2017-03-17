@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		E403EF1B1E782FAB0005586F /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */; };
 		E41424D31E77EE6A005B81EA /* NewtonCradle.m in Sources */ = {isa = PBXBuildFile; fileRef = E41424D21E77EE6A005B81EA /* NewtonCradle.m */; };
 		E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E41424D51E77EF51005B81EA /* NewtonCradleViewController.m */; };
 		E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D6C8C1E45DA0A00CA3F61 /* Tap.m */; };
@@ -18,9 +17,10 @@
 		E43087061E3F1A1700565C6A /* Spinner.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087051E3F1A1700565C6A /* Spinner.m */; };
 		E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */; };
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
+		E4CC1B961E7BE79000E10D9C /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */; };
+		E4CC1B971E7BE79000E10D9C /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */; };
 		E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */; };
 		E4DA90F61E793B33005DA2E4 /* SeachIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F51E793B33005DA2E4 /* SeachIcon.m */; };
-		E4DA90F91E793B73005DA2E4 /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */; };
 		E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */; };
 		E4DA91001E7A28F6005DA2E4 /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FF1E7A28F6005DA2E4 /* Graph.m */; };
 		E4DA91031E7A2931005DA2E4 /* GraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA91021E7A2931005DA2E4 /* GraphViewController.m */; };
@@ -53,9 +53,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		E403EF191E782FAB0005586F /* PublicAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationLayer.h; sourceTree = "<group>"; };
-		E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationLayer.m; sourceTree = "<group>"; };
-		E403EF1C1E782FBB0005586F /* AnimationDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnimationDelegate.h; sourceTree = "<group>"; };
 		E41424D11E77EE6A005B81EA /* NewtonCradle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewtonCradle.h; sourceTree = "<group>"; };
 		E41424D21E77EE6A005B81EA /* NewtonCradle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewtonCradle.m; sourceTree = "<group>"; };
 		E41424D41E77EF51005B81EA /* NewtonCradleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewtonCradleViewController.h; sourceTree = "<group>"; };
@@ -77,12 +74,15 @@
 		E43087081E3F1A3200565C6A /* SpinnerPresentationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpinnerPresentationViewController.m; sourceTree = "<group>"; };
 		E430870B1E3F1CB900565C6A /* AnimationProcessor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationProcessor.h; sourceTree = "<group>"; };
 		E430870C1E3F1CB900565C6A /* AnimationProcessor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationProcessor.m; sourceTree = "<group>"; };
+		E4CC1B911E7BE79000E10D9C /* AnimationDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationDelegate.h; sourceTree = "<group>"; };
+		E4CC1B921E7BE79000E10D9C /* PublicAnimationLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationLayer.h; sourceTree = "<group>"; };
+		E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationLayer.m; sourceTree = "<group>"; };
+		E4CC1B941E7BE79000E10D9C /* PublicAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationView.h; sourceTree = "<group>"; };
+		E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationView.m; sourceTree = "<group>"; };
 		E4DA3DF91E3F263400E4253F /* AnimationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
 		E4DA90F41E793B33005DA2E4 /* SeachIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachIcon.h; sourceTree = "<group>"; };
 		E4DA90F51E793B33005DA2E4 /* SeachIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SeachIcon.m; sourceTree = "<group>"; };
-		E4DA90F71E793B73005DA2E4 /* PublicAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationView.h; sourceTree = "<group>"; };
-		E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationView.m; sourceTree = "<group>"; };
 		E4DA90FA1E793BBD005DA2E4 /* SearchIconViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchIconViewController.h; sourceTree = "<group>"; };
 		E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchIconViewController.m; sourceTree = "<group>"; };
 		E4DA90FE1E7A28F6005DA2E4 /* Graph.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graph.h; sourceTree = "<group>"; };
@@ -134,18 +134,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		E403EF181E782F6D0005586F /* Public Class */ = {
-			isa = PBXGroup;
-			children = (
-				E403EF1C1E782FBB0005586F /* AnimationDelegate.h */,
-				E403EF191E782FAB0005586F /* PublicAnimationLayer.h */,
-				E403EF1A1E782FAB0005586F /* PublicAnimationLayer.m */,
-				E4DA90F71E793B73005DA2E4 /* PublicAnimationView.h */,
-				E4DA90F81E793B73005DA2E4 /* PublicAnimationView.m */,
-			);
-			path = "Public Class";
-			sourceTree = "<group>";
-		};
 		E41424D01E77EAE3005B81EA /* Newton Cradle */ = {
 			isa = PBXGroup;
 			children = (
@@ -192,7 +180,6 @@
 		E43087021E3F1A1700565C6A /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				E403EF181E782F6D0005586F /* Public Class */,
 				E4DA90FD1E7A28D4005DA2E4 /* Graph */,
 				E4DA90F31E793B15005DA2E4 /* Search Icon */,
 				E41424D01E77EAE3005B81EA /* Newton Cradle */,
@@ -221,6 +208,18 @@
 				E430870C1E3F1CB900565C6A /* AnimationProcessor.m */,
 			);
 			path = Utils;
+			sourceTree = "<group>";
+		};
+		E4CC1B901E7BE79000E10D9C /* Public Class */ = {
+			isa = PBXGroup;
+			children = (
+				E4CC1B911E7BE79000E10D9C /* AnimationDelegate.h */,
+				E4CC1B921E7BE79000E10D9C /* PublicAnimationLayer.h */,
+				E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */,
+				E4CC1B941E7BE79000E10D9C /* PublicAnimationView.h */,
+				E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */,
+			);
+			path = "Public Class";
 			sourceTree = "<group>";
 		};
 		E4DA90F31E793B15005DA2E4 /* Search Icon */ = {
@@ -284,6 +283,7 @@
 			children = (
 				E42E262F1E7B96BB0058ABEB /* Extensions */,
 				E430870A1E3F1A7300565C6A /* Utils */,
+				E4CC1B901E7BE79000E10D9C /* Public Class */,
 				E43087021E3F1A1700565C6A /* Components */,
 				E4F7EF351E3F191A001AEDB9 /* AppDelegate.h */,
 				E4F7EF361E3F191A001AEDB9 /* AppDelegate.m */,
@@ -458,16 +458,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4DA90F91E793B73005DA2E4 /* PublicAnimationView.m in Sources */,
 				E41424D61E77EF51005B81EA /* NewtonCradleViewController.m in Sources */,
 				E41D6C8D1E45DA0A00CA3F61 /* Tap.m in Sources */,
 				E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */,
 				E43087091E3F1A3200565C6A /* SpinnerPresentationViewController.m in Sources */,
 				E4DA91031E7A2931005DA2E4 /* GraphViewController.m in Sources */,
+				E4CC1B961E7BE79000E10D9C /* PublicAnimationLayer.m in Sources */,
+				E4CC1B971E7BE79000E10D9C /* PublicAnimationView.m in Sources */,
 				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
 				E42E262D1E7B831A0058ABEB /* AnimatableDonutsLayer.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
-				E403EF1B1E782FAB0005586F /* PublicAnimationLayer.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,
 				E4E409271E407AB5005E438B /* PlayPauseIconPresentationViewController.m in Sources */,
