@@ -11,6 +11,7 @@
 
 #define START_RADIUS 0.1
 #define DURATION 1
+#define TIME_FRAG 1.0/6.0
 
 @implementation AnimatableDonutsLayer {
     CGPoint _centerPoint;
@@ -60,7 +61,7 @@
                                                                          delegate:self
                                                                         fromValue:fromValue
                                                                           toValue:toValue
-                                                                         duration:1.0/3.0];
+                                                                         duration:TIME_FRAG];
     
     [self addAnimation:extendingAnimation forKey:@"Exc_First_ExtendingAnimation"];
     
@@ -94,14 +95,33 @@
                                                                          delegate:nil
                                                                         fromValue:fromValue
                                                                           toValue:toValue
-                                                                         duration:1.0/3.0];
+                                                                         duration:TIME_FRAG];
     
     [_insideLayer addAnimation:extendingAnimation forKey:@"Int_ExtendingAnimation"];
 }
 
 - (void)__configureTheRestAnimationOfSelf {
     //先将外圈放大到半径为_excRadius+_radiusOffset的大小,然后再缩小到_excRadius的大小
+    CGFloat extendingTimes = (_excRadius + _radiusOffset)/START_RADIUS;
+    CGFloat shrinkingTimes = _excRadius/START_RADIUS;
     
+    CATransform3D originalTransf = self.transform;
+    CATransform3D firstKeyframeTransf = CATransform3DMakeScale(extendingTimes, extendingTimes, 1);
+    
+    CATransform3D secondKeyframeTransf = CATransform3DMakeScale(shrinkingTimes, shrinkingTimes, 1);
+    
+    NSArray *values = @[[NSValue valueWithCATransform3D:originalTransf],
+                        [NSValue valueWithCATransform3D:firstKeyframeTransf],
+                        [NSValue valueWithCATransform3D:secondKeyframeTransf]];
+    
+    CFTimeInterval duration = 2 * TIME_FRAG;
+    
+    CAKeyframeAnimation *anim = [CAKeyframeAnimation animationWithKeypath:@"transform"
+                                                                 delegate:nil
+                                                                   values:values
+                                                                 duration:duration];
+    
+    [self addAnimation:anim forKey:@"Exc_Rest_Animation"];
 }
 
 @end

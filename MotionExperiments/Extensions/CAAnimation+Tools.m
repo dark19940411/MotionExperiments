@@ -27,3 +27,21 @@
 }
 
 @end
+
+@implementation CAKeyframeAnimation (Tools)
+
++ (CAKeyframeAnimation *)animationWithKeypath:(NSString *)keypath
+                                     delegate:(id<CAAnimationDelegate>)delegate
+                                       values:(NSArray *)values
+                                     duration:(CFTimeInterval)duration
+{
+    CAKeyframeAnimation *animation = [CAKeyframeAnimation animationWithKeyPath:keypath];
+    animation.values = values;
+    animation.delegate = delegate;
+    animation.duration = duration;
+    animation.fillMode = kCAFillModeForwards;
+    animation.removedOnCompletion = NO;
+    return animation;
+}
+
+@end

@@ -15,3 +15,12 @@
                                    toValue:(id)toValue
                                   duration:(CFTimeInterval)duration;
 @end
+
+@interface CAKeyframeAnimation (Tools)
+
++ (CAKeyframeAnimation *)animationWithKeypath:(NSString *)keypath
+                                     delegate:(id<CAAnimationDelegate>)delegate
+                                       values:(NSArray *)values
+                                     duration:(CFTimeInterval)duration;
+
+@end

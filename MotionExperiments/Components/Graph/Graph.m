@@ -11,8 +11,8 @@
 
 #define GRAPH_HEIGHT (GRAPH_BG_HEIGHT/2.0)
 #define CONTENT_OFFSET 20.0
-#define EXC_RADIUS 5.0
-#define INT_RADIUS 4.0
+#define EXC_RADIUS 4.0
+#define INT_RADIUS 2.0
 #define RADIUS_OFFSET 2.0
 
 @implementation Graph {
