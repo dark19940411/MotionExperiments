@@ -13,4 +13,6 @@
 #import "UIBezierPath+CommonPath.h"
 #import "CALayer+Tools.h"
 
+#import "Macros.h"
+
 #endif /* Extensions_h */

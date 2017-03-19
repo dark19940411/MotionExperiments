@@ -89,6 +89,7 @@
 		E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationView.m; sourceTree = "<group>"; };
 		E4CC1B991E7BE85200E10D9C /* CALayer+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Tools.h"; sourceTree = "<group>"; };
 		E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Tools.m"; sourceTree = "<group>"; };
+		E4CC1BA71E7E801D00E10D9C /* Macros.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Macros.h; sourceTree = "<group>"; };
 		E4DA3DF91E3F263400E4253F /* AnimationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
 		E4DA90F41E793B33005DA2E4 /* SeachIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachIcon.h; sourceTree = "<group>"; };
@@ -185,6 +186,7 @@
 				E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */,
 				E4CC1B991E7BE85200E10D9C /* CALayer+Tools.h */,
 				E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */,
+				E4CC1BA71E7E801D00E10D9C /* Macros.h */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";

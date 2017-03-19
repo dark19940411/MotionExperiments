@@ -16,6 +16,7 @@
 #define INT_RADIUS 2.0
 #define RADIUS_OFFSET 2.0
 #define SEG_DURATION 1.0/8.0
+#define LINE_HEIGHT 1.0
 
 @implementation Graph {
     NSArray<NSNumber *> *_rawPointData;    //用来装每个点的y值的数组，值在[0,1]区间内取
@@ -51,7 +52,36 @@
 #pragma mark -
 #pragma mark Setup
 - (void)__setupGreyLines {
+    CGFloat y1 = (GRAPH_BG_HEIGHT - GRAPH_HEIGHT)/2;
+    CGFloat y2 = (GRAPH_BG_HEIGHT - GRAPH_HEIGHT)/2 + 0.5 * GRAPH_HEIGHT;
+    CGFloat y3 = (GRAPH_BG_HEIGHT - GRAPH_HEIGHT)/2 + GRAPH_HEIGHT;
     
+    CGFloat scrWidth = [UIScreen mainScreen].bounds.size.width;
+    
+    UIColor *greyColor = RGBA(30, 30, 30, 1);
+    
+    CALayer *line1 = [CALayer layer];
+    line1.frame = CGRectMake(scrWidth, y1, scrWidth, LINE_HEIGHT);
+    line1.backgroundColor = greyColor.CGColor;
+    
+    CALayer *line2 = [CALayer layer];
+    line2.frame = CGRectMake(scrWidth, y2, scrWidth, LINE_HEIGHT);
+    line2.backgroundColor = greyColor.CGColor;
+    
+    CALayer *line3 = [CALayer layer];
+    line3.frame = CGRectMake(scrWidth, y3, scrWidth, LINE_HEIGHT);
+    line3.backgroundColor = greyColor.CGColor;
+    
+    NSMutableArray *lines = [NSMutableArray array];
+    [lines addObject:line1];
+    [lines addObject:line2];
+    [lines addObject:line3];
+    
+    for (CALayer *line in lines) {
+        [self addSublayer:line];
+    }
+    
+    _lineLayers = [lines copy];
 }
 
 - (void)__setupCurveBackLayer {
@@ -176,6 +206,8 @@
 #pragma mark -
 #pragma mark CAAnimationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    
+    
     if (_endPointIndex == _strokeEnds.count - 1) {
         [self __trigerTheLastSegAnimation];
     } else {
