@@ -19,6 +19,7 @@
     NSArray<NSNumber *> *_rawPointData;    //用来装每个点的y值的数组，值在[0,1]区间内取
     NSArray<NSValue *> *_processedPointData; //经过处理的点数据，可以被用于动画
     NSArray<NSNumber *> *_segmentLengths;    //点与点之间的距离
+    NSArray<NSNumber *> *_strokeEnds;        //每个点对应的strokEnd，之所以需要这个是因为动画需要一段段的去生成，每次触发AnimatableDonutsLayer的动画
     CAShapeLayer *_curveBackLayer;
     CGFloat _totalCurveLength;
 }
@@ -100,6 +101,17 @@
     }
     _totalCurveLength = totalLength;
     _segmentLengths = [segmentLengths copy];
+}
+
+- (void)__calculateStrokeEnds {
+    __block CGFloat pileLength = 0;
+    NSMutableArray *strokeEnds = [NSMutableArray array];
+    [_segmentLengths enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat len = [obj floatValue];
+        pileLength += len;
+        [strokeEnds addObject:[NSNumber numberWithFloat:pileLength/_totalCurveLength]];
+    }];
+    _strokeEnds = [strokeEnds copy];
 }
 
 #pragma mark -

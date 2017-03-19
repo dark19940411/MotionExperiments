@@ -7,8 +7,11 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "Graph.h"
 
-@interface MotionExperimentsUITests : XCTestCase
+@interface MotionExperimentsUITests : XCTestCase{
+    Graph *_graph;
+}
 
 @end
 
@@ -25,6 +28,9 @@
     [[[XCUIApplication alloc] init] launch];
     
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    _graph = [[Graph alloc] init];
+    _graph.bounds = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, GRAPH_BG_HEIGHT);
+    [_graph setPointData:@[@0.27,@0.49,@0.25,@0.4,@0,@0.47,@0.6,@1,@0.59,@0.05]];
 }
 
 - (void)tearDown {
@@ -35,6 +41,7 @@
 - (void)testExample {
     // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
+    [_graph startAnimation];
     
 }
 

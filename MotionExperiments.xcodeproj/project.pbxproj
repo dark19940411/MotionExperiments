@@ -20,6 +20,13 @@
 		E4CC1B961E7BE79000E10D9C /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */; };
 		E4CC1B971E7BE79000E10D9C /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */; };
 		E4CC1B9B1E7BE85200E10D9C /* CALayer+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */; };
+		E4CC1B9C1E7E6DB300E10D9C /* Graph.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FF1E7A28F6005DA2E4 /* Graph.m */; };
+		E4CC1B9F1E7E6DC600E10D9C /* UIBezierPath+CommonPath.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E26311E7B96CB0058ABEB /* UIBezierPath+CommonPath.m */; };
+		E4CC1BA11E7E6DC600E10D9C /* CAAnimation+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */; };
+		E4CC1BA31E7E6DC600E10D9C /* CALayer+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */; };
+		E4CC1BA41E7E6DCF00E10D9C /* AnimatableDonutsLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E42E262C1E7B831A0058ABEB /* AnimatableDonutsLayer.m */; };
+		E4CC1BA51E7E6DEC00E10D9C /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */; };
+		E4CC1BA61E7E6DEC00E10D9C /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */; };
 		E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */; };
 		E4DA90F61E793B33005DA2E4 /* SeachIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F51E793B33005DA2E4 /* SeachIcon.m */; };
 		E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */; };
@@ -500,6 +507,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4CC1BA51E7E6DEC00E10D9C /* PublicAnimationLayer.m in Sources */,
+				E4CC1BA61E7E6DEC00E10D9C /* PublicAnimationView.m in Sources */,
+				E4CC1BA41E7E6DCF00E10D9C /* AnimatableDonutsLayer.m in Sources */,
+				E4CC1B9F1E7E6DC600E10D9C /* UIBezierPath+CommonPath.m in Sources */,
+				E4CC1BA11E7E6DC600E10D9C /* CAAnimation+Tools.m in Sources */,
+				E4CC1BA31E7E6DC600E10D9C /* CALayer+Tools.m in Sources */,
+				E4CC1B9C1E7E6DB300E10D9C /* Graph.m in Sources */,
 				E4F7EF581E3F191A001AEDB9 /* MotionExperimentsUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
