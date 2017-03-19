@@ -17,6 +17,8 @@
 #define RADIUS_OFFSET 2.0
 #define SEG_DURATION 1.0/8.0
 #define LINE_HEIGHT 1.0
+#define LINE_ANIMATION_DURATION 7*SEG_DURATION
+#define LINE_ANIMATION_DELAY 2*SEG_DURATION
 
 @implementation Graph {
     NSArray<NSNumber *> *_rawPointData;    //用来装每个点的y值的数组，值在[0,1]区间内取
@@ -58,7 +60,7 @@
     
     CGFloat scrWidth = [UIScreen mainScreen].bounds.size.width;
     
-    UIColor *greyColor = RGBA(30, 30, 30, 1);
+    UIColor *greyColor = RGBA(200, 200, 200, 1);
     
     CALayer *line1 = [CALayer layer];
     line1.frame = CGRectMake(scrWidth, y1, scrWidth, LINE_HEIGHT);
@@ -195,6 +197,18 @@
     
 }
 
+- (void)__triggerLinesAnimation {
+    [_lineLayers enumerateObjectsUsingBlock:^(CALayer * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        NSNumber *from = [NSNumber numberWithFloat:obj.position.x];
+        NSNumber *to = [NSNumber numberWithFloat:obj.position.x - [UIScreen mainScreen].bounds.size.width];
+        CABasicAnimation *anim = [CABasicAnimation animationWithKeypath:@"position.x" delegate:nil fromValue:from toValue:to duration:LINE_ANIMATION_DURATION];
+        anim.beginTime = CACurrentMediaTime() + idx * LINE_ANIMATION_DELAY;
+        [obj addAnimation:anim forKey:nil];
+    }];
+}
+
+#pragma -
+#pragma mark clear
 - (void)__removeAllDonutsLayer {
     for (int idx = 0; idx < self.sublayers.count; idx++) {
         if ([self.sublayers[idx] isKindOfClass:[AnimatableDonutsLayer class]]) {
@@ -206,7 +220,9 @@
 #pragma mark -
 #pragma mark CAAnimationDelegate
 - (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
-    
+    if (_endPointIndex == 2) {
+        [self __triggerLinesAnimation];
+    }
     
     if (_endPointIndex == _strokeEnds.count - 1) {
         [self __trigerTheLastSegAnimation];
