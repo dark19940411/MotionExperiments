@@ -8,20 +8,24 @@
 
 #import "Graph.h"
 #import "AnimatableDonutsLayer.h"
+#import "Extensions.h"
 
 #define GRAPH_HEIGHT (GRAPH_BG_HEIGHT/2.0)
 #define CONTENT_OFFSET 20.0
 #define EXC_RADIUS 4.0
 #define INT_RADIUS 2.0
 #define RADIUS_OFFSET 2.0
+#define SEG_DURATION 1.0/8.0
 
 @implementation Graph {
     NSArray<NSNumber *> *_rawPointData;    //用来装每个点的y值的数组，值在[0,1]区间内取
     NSArray<NSValue *> *_processedPointData; //经过处理的点数据，可以被用于动画
     NSArray<NSNumber *> *_segmentLengths;    //点与点之间的距离
     NSArray<NSNumber *> *_strokeEnds;        //每个点对应的strokEnd，之所以需要这个是因为动画需要一段段的去生成，每次触发AnimatableDonutsLayer的动画
+    NSArray<CALayer *> *_lineLayers;         //三条线的存储
     CAShapeLayer *_curveBackLayer;
     CGFloat _totalCurveLength;
+    NSInteger _endPointIndex;                //当前动画所处的点对应的index
 }
 
 #pragma mark -
@@ -29,7 +33,8 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        
+        self.masksToBounds = YES;
+        [self __setupGreyLines];
     }
     return self;
 }
@@ -38,26 +43,15 @@
 #pragma mark Public
 - (void)setPointData:(NSArray *)pointData {
     _rawPointData = pointData;
+    _endPointIndex = 0;
     [self __calculatePointDataToDraw];
     [self __setupCurveBackLayer];
 }
 
 #pragma mark -
-#pragma mark Private
-- (void)__calculatePointDataToDraw {
-    CGSize size = self.bounds.size;
-    CGFloat xGap = (size.width - 2 * CONTENT_OFFSET)/(_rawPointData.count - 1);
+#pragma mark Setup
+- (void)__setupGreyLines {
     
-    NSMutableArray *processedPointData = [NSMutableArray array];
-    [_rawPointData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        CGFloat x = CONTENT_OFFSET + idx * xGap;
-        CGFloat y = (GRAPH_BG_HEIGHT - GRAPH_HEIGHT)/2 + (1 - [obj floatValue]) * GRAPH_HEIGHT;
-        CGPoint processedPoint = CGPointMake(x, y);
-        [processedPointData addObject:[NSValue valueWithCGPoint:processedPoint]];
-    }];
-    
-    _processedPointData = [processedPointData copy];
-    [self __calculateCurveLength];
 }
 
 - (void)__setupCurveBackLayer {
@@ -73,6 +67,24 @@
     _curveBackLayer.path = [self __createCurvePath].CGPath;
     
     [self addSublayer:_curveBackLayer];
+}
+
+#pragma mark -
+#pragma mark Calculation
+- (void)__calculatePointDataToDraw {
+    CGSize size = self.bounds.size;
+    CGFloat xGap = (size.width - 2 * CONTENT_OFFSET)/(_rawPointData.count - 1);
+    
+    NSMutableArray *processedPointData = [NSMutableArray array];
+    [_rawPointData enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        CGFloat x = CONTENT_OFFSET + idx * xGap;
+        CGFloat y = (GRAPH_BG_HEIGHT - GRAPH_HEIGHT)/2 + (1 - [obj floatValue]) * GRAPH_HEIGHT;
+        CGPoint processedPoint = CGPointMake(x, y);
+        [processedPointData addObject:[NSValue valueWithCGPoint:processedPoint]];
+    }];
+    
+    _processedPointData = [processedPointData copy];
+    [self __calculateCurveLength];
 }
 
 - (UIBezierPath *)__createCurvePath {
@@ -101,9 +113,10 @@
     }
     _totalCurveLength = totalLength;
     _segmentLengths = [segmentLengths copy];
+    [self __calculateStrokeEnds];
 }
 
-- (void)__calculateStrokeEnds {
+- (void)__calculateStrokeEnds {     //计算每个点所处的strokeEnd
     __block CGFloat pileLength = 0;
     NSMutableArray *strokeEnds = [NSMutableArray array];
     [_segmentLengths enumerateObjectsUsingBlock:^(NSNumber * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -111,16 +124,62 @@
         pileLength += len;
         [strokeEnds addObject:[NSNumber numberWithFloat:pileLength/_totalCurveLength]];
     }];
+    [strokeEnds insertObject:[NSNumber numberWithFloat:0] atIndex:0];
     _strokeEnds = [strokeEnds copy];
 }
 
 #pragma mark -
 #pragma mark AnimationDelegate
 - (void)startAnimation {
-    for (NSValue *pointV in _processedPointData) {
-        CGPoint point = [pointV CGPointValue];
-        AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET parentLayer:self];
-        [donutsLayer startAnimation];
+    if (_processedPointData == nil || _processedPointData.count == 0) {
+        return;
+    }
+    [self __triggerTheNextSegAnimationInMiddle];
+}
+
+#pragma mark -
+#pragma mark Animation Driver
+- (void)__triggerTheNextSegAnimationInMiddle {
+    CGPoint point = _processedPointData[_endPointIndex].CGPointValue;
+    
+    CABasicAnimation *anim = [CABasicAnimation animationWithKeypath:@"strokeEnd" delegate:self fromValue:_strokeEnds[_endPointIndex] toValue:_strokeEnds[++_endPointIndex] duration:SEG_DURATION];
+    
+    [_curveBackLayer addAnimation:anim forKey:@"Curve_drawing_animation"];
+    
+    AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET parentLayer:self];
+    [donutsLayer startAnimation];
+}
+
+- (void)__trigerTheLastSegAnimation {
+    CGPoint point = _processedPointData[_endPointIndex].CGPointValue;
+    
+    AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET parentLayer:self];
+    [donutsLayer startAnimation];
+    
+    _endPointIndex = 0;
+    
+//    [self removeAllAnimations];
+//    [self __removeAllDonutsLayer];
+//    
+//    [self __triggerTheNextSegAnimationInMiddle];
+    
+}
+
+- (void)__removeAllDonutsLayer {
+    for (int idx = 0; idx < self.sublayers.count; idx++) {
+        if ([self.sublayers[idx] isKindOfClass:[AnimatableDonutsLayer class]]) {
+            [self.sublayers[idx] removeFromSuperlayer];
+        }
+    }
+}
+
+#pragma mark -
+#pragma mark CAAnimationDelegate
+- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag {
+    if (_endPointIndex == _strokeEnds.count - 1) {
+        [self __trigerTheLastSegAnimation];
+    } else {
+        [self __triggerTheNextSegAnimationInMiddle];
     }
 }
 

@@ -222,7 +222,7 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		E4CC1B901E7BE79000E10D9C /* Public Class */ = {
+		E4CC1B901E7BE79000E10D9C /* Public Class(Abstract) */ = {
 			isa = PBXGroup;
 			children = (
 				E4CC1B911E7BE79000E10D9C /* AnimationDelegate.h */,
@@ -231,6 +231,7 @@
 				E4CC1B941E7BE79000E10D9C /* PublicAnimationView.h */,
 				E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */,
 			);
+			name = "Public Class(Abstract)";
 			path = "Public Class";
 			sourceTree = "<group>";
 		};
@@ -295,7 +296,7 @@
 			children = (
 				E42E262F1E7B96BB0058ABEB /* Extensions */,
 				E430870A1E3F1A7300565C6A /* Utils */,
-				E4CC1B901E7BE79000E10D9C /* Public Class */,
+				E4CC1B901E7BE79000E10D9C /* Public Class(Abstract) */,
 				E43087021E3F1A1700565C6A /* Components */,
 				E4F7EF351E3F191A001AEDB9 /* AppDelegate.h */,
 				E4F7EF361E3F191A001AEDB9 /* AppDelegate.m */,
