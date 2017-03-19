@@ -8,12 +8,6 @@
 
 #import <QuartzCore/QuartzCore.h>
 
-@interface CALayer (Tools)
-
-+ (instancetype)layerWithCenterPoint:(CGPoint)point size:(CGSize)size;
-
-@end
-
 @interface CABasicAnimation (Tools)
 + (CABasicAnimation *)animationWithKeypath:(NSString *)keypath
                                   delegate:(id<CAAnimationDelegate>)delegate

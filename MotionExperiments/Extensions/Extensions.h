@@ -11,5 +11,6 @@
 
 #import "CAAnimation+Tools.h"
 #import "UIBezierPath+CommonPath.h"
+#import "CALayer+Tools.h"
 
 #endif /* Extensions_h */

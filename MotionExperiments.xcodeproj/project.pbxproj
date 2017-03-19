@@ -19,6 +19,7 @@
 		E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */ = {isa = PBXBuildFile; fileRef = E430870C1E3F1CB900565C6A /* AnimationProcessor.m */; };
 		E4CC1B961E7BE79000E10D9C /* PublicAnimationLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */; };
 		E4CC1B971E7BE79000E10D9C /* PublicAnimationView.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */; };
+		E4CC1B9B1E7BE85200E10D9C /* CALayer+Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */; };
 		E4DA3DFB1E3F263400E4253F /* AnimationListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */; };
 		E4DA90F61E793B33005DA2E4 /* SeachIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90F51E793B33005DA2E4 /* SeachIcon.m */; };
 		E4DA90FC1E793BBD005DA2E4 /* SearchIconViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E4DA90FB1E793BBD005DA2E4 /* SearchIconViewController.m */; };
@@ -79,6 +80,8 @@
 		E4CC1B931E7BE79000E10D9C /* PublicAnimationLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationLayer.m; sourceTree = "<group>"; };
 		E4CC1B941E7BE79000E10D9C /* PublicAnimationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PublicAnimationView.h; sourceTree = "<group>"; };
 		E4CC1B951E7BE79000E10D9C /* PublicAnimationView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PublicAnimationView.m; sourceTree = "<group>"; };
+		E4CC1B991E7BE85200E10D9C /* CALayer+Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CALayer+Tools.h"; sourceTree = "<group>"; };
+		E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CALayer+Tools.m"; sourceTree = "<group>"; };
 		E4DA3DF91E3F263400E4253F /* AnimationListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimationListViewController.h; sourceTree = "<group>"; };
 		E4DA3DFA1E3F263400E4253F /* AnimationListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimationListViewController.m; sourceTree = "<group>"; };
 		E4DA90F41E793B33005DA2E4 /* SeachIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SeachIcon.h; sourceTree = "<group>"; };
@@ -173,6 +176,8 @@
 				E42E26311E7B96CB0058ABEB /* UIBezierPath+CommonPath.m */,
 				E42E26351E7BCCD50058ABEB /* CAAnimation+Tools.h */,
 				E42E26331E7BCCBA0058ABEB /* CAAnimation+Tools.m */,
+				E4CC1B991E7BE85200E10D9C /* CALayer+Tools.h */,
+				E4CC1B9A1E7BE85200E10D9C /* CALayer+Tools.m */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -467,6 +472,7 @@
 				E4CC1B971E7BE79000E10D9C /* PublicAnimationView.m in Sources */,
 				E41D6C901E45DA6E00CA3F61 /* TapPresentationViewController.m in Sources */,
 				E42E262D1E7B831A0058ABEB /* AnimatableDonutsLayer.m in Sources */,
+				E4CC1B9B1E7BE85200E10D9C /* CALayer+Tools.m in Sources */,
 				E4F7EF371E3F191A001AEDB9 /* AppDelegate.m in Sources */,
 				E4F7EF341E3F191A001AEDB9 /* main.m in Sources */,
 				E430870D1E3F1CB900565C6A /* AnimationProcessor.m in Sources */,

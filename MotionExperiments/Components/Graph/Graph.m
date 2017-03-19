@@ -107,8 +107,7 @@
 - (void)startAnimation {
     for (NSValue *pointV in _processedPointData) {
         CGPoint point = [pointV CGPointValue];
-        AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET];
-        [self addSublayer:donutsLayer];
+        AnimatableDonutsLayer *donutsLayer = [AnimatableDonutsLayer layerWithCenterPoint:point ExcRadius:EXC_RADIUS inRadius:INT_RADIUS andRadiusOffset:RADIUS_OFFSET parentLayer:self];
         [donutsLayer startAnimation];
     }
 }

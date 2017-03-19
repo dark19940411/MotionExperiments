@@ -18,6 +18,7 @@
     CGFloat _inRadius;
     CGFloat _radiusOffset;
     CAShapeLayer *_insideLayer;
+    __weak CALayer *_parentLayer;
 }
 
 #pragma mark -
@@ -26,6 +27,7 @@
                                       ExcRadius:(CGFloat)excRadius
                                        inRadius:(CGFloat)inRadius
                                 andRadiusOffset:(CGFloat)radiusOffset
+                                    parentLayer:(CALayer *)parentLayer
 {
     CGFloat edge = (excRadius + radiusOffset) * 2;
     AnimatableDonutsLayer *layer = [AnimatableDonutsLayer layerWithCenterPoint:centerPoint size:CGSizeMake(edge, edge)];
@@ -33,7 +35,9 @@
     layer->_excRadius = excRadius;
     layer->_inRadius = inRadius;
     layer->_radiusOffset = radiusOffset;
+    layer->_parentLayer = parentLayer;
     [layer __setupDonutsLayer];
+    [parentLayer addSublayer:layer];
     return layer;
 }
 
@@ -58,7 +62,7 @@
                                                                           toValue:toValue
                                                                          duration:1.0/3.0];
     
-    [self addAnimation:extendingAnimation forKey:@"ExtendingAnimation"];
+    [self addAnimation:extendingAnimation forKey:@"Exc_First_ExtendingAnimation"];
     
 }
 
@@ -72,10 +76,31 @@
 #pragma mark -
 #pragma mark Configure Animations
 - (void)__configureInsideLayerAndAnimation {
+    //中间增加一个会放大的白色动画图层，从0.1半径放大到_inRadius的大小
+    _insideLayer = [CAShapeLayer layerWithCenterPoint:self.position size:self.frame.size];
+    _insideLayer.lineWidth = 0;
+    _insideLayer.fillColor = [UIColor whiteColor].CGColor;
+    _insideLayer.path = [UIBezierPath circlePathWithCenterPoint:_centerPoint radius:START_RADIUS].CGPath;
     
+    [_parentLayer addSublayer:_insideLayer];
+    
+    CGFloat extendingTimes = _inRadius/START_RADIUS;
+    CATransform3D extendingTransf = CATransform3DMakeScale(extendingTimes, extendingTimes, 1);
+    
+    NSValue *fromValue = [NSValue valueWithCATransform3D:CATransform3DIdentity];
+    NSValue *toValue = [NSValue valueWithCATransform3D:extendingTransf];
+    
+    CABasicAnimation *extendingAnimation = [CABasicAnimation animationWithKeypath:@"transform"
+                                                                         delegate:nil
+                                                                        fromValue:fromValue
+                                                                          toValue:toValue
+                                                                         duration:1.0/3.0];
+    
+    [_insideLayer addAnimation:extendingAnimation forKey:@"Int_ExtendingAnimation"];
 }
 
 - (void)__configureTheRestAnimationOfSelf {
+    //先将外圈放大到半径为_excRadius+_radiusOffset的大小,然后再缩小到_excRadius的大小
     
 }
 

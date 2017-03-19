@@ -13,6 +13,7 @@
 + (AnimatableDonutsLayer *)layerWithCenterPoint:(CGPoint)centerPoint
                                       ExcRadius:(CGFloat)excRadius
                                        inRadius:(CGFloat)inRadius
-                                andRadiusOffset:(CGFloat)radiusOffset;
+                                andRadiusOffset:(CGFloat)radiusOffset
+                                    parentLayer:(CALayer *)parentLayer;
 
 @end
