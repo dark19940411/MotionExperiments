@@ -10,8 +10,7 @@
 #import "Extensions.h"
 
 #define START_RADIUS 0.1
-#define DURATION 1
-#define TIME_FRAG 1.0/6.0
+#define TIME_FRAG 1.0/9.0
 
 @implementation AnimatableDonutsLayer {
     CGPoint _centerPoint;
