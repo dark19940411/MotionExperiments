@@ -25,12 +25,6 @@
         _searching = NO;
         _circleLayer = [CAShapeLayer layer];
         _circleLayer.frame = self.bounds;
-//        _circleLayer.lineWidth = 5.0;
-//        _circleLayer.strokeColor = [UIColor blackColor].CGColor;
-//        _circleLayer.fillColor = [UIColor blackColor].CGColor;
-//        _circleLayer.lineCap = kCALineCapRound;
-//        _circleLayer.lineJoin = kCALineJoinRound;
-//        _circleLayer.path = [self __createCirclePathWithRadius:SI_BG_WIDTH/2 - 5].CGPath;
         _circleLayer.backgroundColor = [UIColor blackColor].CGColor;
         
         CAShapeLayer *maskLayer = [CAShapeLayer layer];

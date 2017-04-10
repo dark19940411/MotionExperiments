@@ -213,6 +213,7 @@
     for (int idx = 0; idx < self.sublayers.count; idx++) {
         if ([self.sublayers[idx] isKindOfClass:[AnimatableDonutsLayer class]]) {
             [self.sublayers[idx] removeFromSuperlayer];
+            idx--;
         }
     }
 }
